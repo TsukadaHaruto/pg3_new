@@ -1,2 +1,3 @@
 ﻿  main.cpp
-  pg3_newwww.vcxproj -> C:\Users\zhong\Desktop\PG\pg3_newwww\x64\Debug\pg3_new.exe
+  LINK : 前回のインクリメンタル リンクで C:\Users\zhong\Desktop\PG\pg3_new\x64\Debug\pg3_new.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  pg3_newwww.vcxproj -> C:\Users\zhong\Desktop\PG\pg3_new\x64\Debug\pg3_new.exe
