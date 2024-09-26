@@ -1,34 +1,28 @@
-#include <stdio.h>
-#include <thread>
-#include<iostream>
-using namespace std;
-
-void Quadruple(int num) {
-	num *= 4;
-	std::cout << "thread 1 =" << std::this_thread::get_id() << std::endl;
-}
-
-void AddFour(int num) {
-	num += 4;
-	std::cout << "thread 2 =" << std::this_thread::get_id() << std::endl;
-}
-
-void subtract(int num) {
-	num -= 4;
-	std::cout << "thread 3 =" << std::this_thread::get_id() << std::endl;
-}
-
+#include "stdio.h"
+#include <iostream>
+#include <string>
+#include <chrono>
 int main() {
-	int num = 3;
 
-	std::thread th1(Quadruple, num);
-	th1.join();
+    // 100000文字の初期化
+    std::string a(100000, 'a');
+    std::string c(100000, 'c');
+    std::move(a);
 
-	std::thread th2(AddFour, num);
-	th2.join();
+    // 100000文字のコピー
+    auto start_copy = std::chrono::high_resolution_clock::now();
+    std::string b = a;
+    auto end_copy = std::chrono::high_resolution_clock::now();
+    auto duration_copy = std::chrono::duration_cast<std::chrono::microseconds>(end_copy - start_copy).count();
+    // 100000文字の移動
+    auto start_move = std::chrono::high_resolution_clock::now();
+    c = std::move(a);
+    auto end_cop = std::chrono::high_resolution_clock::now();
+    auto duration_move = std::chrono::duration_cast<std::chrono::microseconds>(end_cop - start_move).count();
 
-	std::thread th3(subtract, num);
-	th3.join();
+    // 結果の表示
+    std::cout << "100000文字のコピーにかかる時間: " << duration_copy << " μs" << std::endl;
+    std::cout << "100000文字の移動にかかる時間: " << duration_move << " μs" << std::endl;
 
-	return 0;
+    return 0;
 }

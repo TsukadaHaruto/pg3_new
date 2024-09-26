@@ -1,2 +1,4 @@
-﻿  LINK : 前回のインクリメンタル リンクで C:\Users\zhong\Desktop\PG\pg3_new\x64\Debug\pg3_new.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-  pg3_newwww.vcxproj -> C:\Users\zhong\Desktop\PG\pg3_new\x64\Debug\pg3_new.exe
+﻿  main.cpp
+C:\Users\zhong\Desktop\PG\pg3_newwww\pg3_new\main.cpp(10,10): warning C4834: [[nodiscard]] 属性を持つ関数の戻り値を破棄しています
+  LINK : 前回のインクリメンタル リンクで C:\Users\zhong\Desktop\PG\pg3_newwww\pg3_new\x64\Debug\pg3_new.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  pg3_newwww.vcxproj -> C:\Users\zhong\Desktop\PG\pg3_newwww\pg3_new\x64\Debug\pg3_new.exe
